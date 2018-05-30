@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="assets/javascript/game.js"></script>
+
     <title>Word Guess Game</title>
 </head>
 
@@ -18,101 +20,101 @@
                     <div class="jumbotron pt-5 pb-5 mb-2">
                         <!--Name to be guessed-->
                         <div class="row">
-                            <h1 class="display-5 mx-auto">Test your knowledge of computer scientists!</h1>
+                            <h1 class="display-5 mx-auto" id="presentation">Test your knowledge of computer scientists!</h1>
                         </div>
                         <div class="row">
-                            <p class="mx-auto">____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ </p>
+                            <p>
+                                <h1 class="display-5 mx-auto pb-3" id="nameGuess">_ _ _ _ _ _ _ _ _ _</h1>
+                            </p>
                         </div>
                         <!--Start Game/Play again Option-->
                         <div class="row">
-                            <button class="btn btn-primary btn-lg mx-auto">START GAME</button>
+                            <button class="btn btn-primary btn-lg mx-auto" id="newGame" onclick="newGame()">START GAME</button>
                         </div>
                         <hr class="my-3">
                         <!--Alphabet-->
                         <div class="row">
-                            <div class="btn-toolbar mx-auto pt-3">
-                                <div class="btn-group btn-group-sm">
-                                    <button class="btn btn-primary m-1">A</button>
-                                    <button class="btn btn-primary m-1">B</button>
-                                    <button class="btn btn-primary m-1">C</button>
-                                    <button class="btn btn-primary m-1">D</button>
-                                    <button class="btn btn-primary m-1">E</button>
-                                    <button class="btn btn-primary m-1">F</button>
-                                    <button class="btn btn-primary m-1">G</button>
-                                    <button class="btn btn-primary m-1">H</button>
-                                    <button class="btn btn-primary m-1">I</button>
-                                    <button class="btn btn-primary m-1">J</button>
-                                    <button class="btn btn-primary m-1">K</button>
-                                    <button class="btn btn-primary m-1">L</button>
-                                    <button class="btn btn-primary m-1">M</button>
-                                    <button class="btn btn-primary m-1">N</button>
-                                    <button class="btn btn-primary m-1">O</button>
-                                    <button class="btn btn-primary m-1">P</button>
-                                    <button class="btn btn-primary m-1">Q</button>
-                                    <button class="btn btn-primary m-1">R</button>
-                                    <button class="btn btn-primary m-1">S</button>
-                                    <button class="btn btn-primary m-1">T</button>
-                                    <button class="btn btn-primary m-1">U</button>
-                                    <button class="btn btn-primary m-1">V</button>
-                                    <button class="btn btn-primary m-1">W</button>
-                                    <button class="btn btn-primary m-1">X</button>
-                                    <button class="btn btn-primary m-1">Y</button>
-                                    <button class="btn btn-primary m-1">Z</button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Game Statistics-->
-                    <div class="col-3">
-                        <!--Current Game Statistics-->
-                        <div class="row">
-                            <div class="card col-12 p-0 mb-3">
-                                <h5 class="card-header bg-primary text-white text-center text-uppercase">Game Statistics</h5>
-                                <div class="p-3">
-                                    <p class="card-text col-10 float-left">Attemps Left:</p>
-                                    <p class="card-text text-right mr-2">0</p>
-                                    <p class="card-text col-10 float-left">Streak:</p>
-                                    <p class="card-text text-right mr-2">0</p>
-                                    <p class="card-text col-10 float-left">Time:</p>
-                                    <p class="card-text text-right mr-2">0:00</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--Session Statistics-->
-                        <div class="row">
-                            <div class="card col-12 p-0 mb-3">
-                                <div class="card">
-                                    <h5 class="card-header bg-primary text-white text-center text-uppercase">Session Statistics</h5>
-                                    <div class="p-3">
-                                        <p class="card-text col-10 float-left">Wins: </p>
-                                        <p class="card-text text-right mr-2">0</p>
-                                        <p class="card-text col-10 float-left">Looses: </p>
-                                        <p class="card-text text-right mr-2">0</p>
-                                    </div>
+                            <div class="btn-toolbar pt-3 mx-auto">
+                                <div class="btn-group btn-group-sm" id="alphabet">
+                                    <button class="btn btn-primary m-1" value="a" disabled>A</button>
+                                    <button class="btn btn-primary m-1" value="b" disabled>B</button>
+                                    <button class="btn btn-primary m-1" value="c" disabled>C</button>
+                                    <button class="btn btn-primary m-1" value="d" disabled>D</button>
+                                    <button class="btn btn-primary m-1" value="e" disabled>E</button>
+                                    <button class="btn btn-primary m-1" value="f" disabled>F</button>
+                                    <button class="btn btn-primary m-1" value="g" disabled>G</button>
+                                    <button class="btn btn-primary m-1" value="h" disabled>H</button>
+                                    <button class="btn btn-primary m-1" value="i" disabled>I</button>
+                                    <button class="btn btn-primary m-1" value="j" disabled>J</button>
+                                    <button class="btn btn-primary m-1" value="k" disabled>K</button>
+                                    <button class="btn btn-primary m-1" value="l" disabled>L</button>
+                                    <button class="btn btn-primary m-1" value="m" disabled>M</button>
+                                    <button class="btn btn-primary m-1" value="n" disabled>N</button>
+                                    <button class="btn btn-primary m-1" value="o" disabled>O</button>
+                                    <button class="btn btn-primary m-1" value="p" disabled>P</button>
+                                    <button class="btn btn-primary m-1" value="q" disabled>Q</button>
+                                    <button class="btn btn-primary m-1" value="r" disabled>R</button>
+                                    <button class="btn btn-primary m-1" value="s" disabled>S</button>
+                                    <button class="btn btn-primary m-1" value="t" disabled>T</button>
+                                    <button class="btn btn-primary m-1" value="u" disabled>U</button>
+                                    <button class="btn btn-primary m-1" value="v" disabled>V</button>
+                                    <button class="btn btn-primary m-1" value="w" disabled>W</button>
+                                    <button class="btn btn-primary m-1" value="x" disabled>X</button>
+                                    <button class="btn btn-primary m-1" value="y" disabled>Y</button>
+                                    <button class="btn btn-primary m-1" value="z" disabled>Z</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Game Hints-->
-                <hr class="my-3">
-                <div class="row pt-3">
-                    <!--Picture of the person-->
-                    <div class="col-2">
-                        <img src="http://via.placeholder.com/250x250" class="img-fluid" alt="Computer Scientists">
+                <!--Game Statistics-->
+                <div class="col-3">
+                    <!--Current Game Statistics-->
+                    <div class="row">
+                        <div class="card col-12 p-0 mb-3">
+                            <h5 class="card-header bg-primary text-white text-center text-uppercase">Game Statistics</h5>
+                            <div class="p-3">
+                                <p class="card-text col-10 float-left">Attemps Left:</p>
+                                <p class="card-text text-right mr-2" id="attLeft">6</p>
+                                <p class="card-text col-10 float-left">Streak:</p>
+                                <p class="card-text text-right mr-2" id="streak">0</p>
+                            </div>
+
+                        </div>
                     </div>
-                    <!--Hints-->
-                    <div class="col-7">
-                        <button type="button" class="btn btn-primary">
-                            Hints
-                            <span class="badge badge-light">2</span>
-                        </button>
+                    <!--Session Statistics-->
+                    <div class="row">
+                        <div class="card col-12 p-0 mb-3">
+                            <div class="card">
+                                <h5 class="card-header bg-primary text-white text-center text-uppercase">Session Statistics</h5>
+                                <div class="p-3">
+                                    <p class="card-text col-10 float-left">Wins: </p>
+                                    <p class="card-text text-right mr-2" id="wins">0</p>
+                                    <p class="card-text col-10 float-left">Losses: </p>
+                                    <p class="card-text text-right mr-2" id="losses">0</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--Game Hints-->
+            <hr class="my-3">
+            <div class="row pt-3">
+                <!--Picture of the person-->
+                <div class="col-2">
+                    <img src="http://via.placeholder.com/250x250" class="img-fluid" alt="Computer Scientists">
+                </div>
+                <!--Hints-->
+                <div class="col-7">
+                    <button type="button" class="btn btn-primary">
+                        Hints
+                        <span class="badge badge-light">2</span>
+                    </button>
+                </div>
+            </div>
         </div>
+    </div>
 </body>
 
 </html>
