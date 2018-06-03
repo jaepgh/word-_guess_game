@@ -103,17 +103,20 @@
             <div class="row pt-3">
                 <!--Picture of the person-->
                 <div class="col-2">
-                    <img src="http://via.placeholder.com/250x250" class="img-fluid" alt="Computer Scientists">
+                    <img src="http://via.placeholder.com/250x250" class="img-fluid" alt="Computer Scientists" id="picture">
                 </div>
                 <!--Hints-->
-                <div class="col-7">
-                    <button type="button" class="btn btn-primary">
+                <div class="col-7 pl-4">
+                    <button type="button" class="btn btn-primary" onclick="giveHint()" id="hintsButton" disabled>
                         Hints
-                        <span class="badge badge-light">2</span>
+                        <span class="badge badge-light" id="badgeCount">2</span>
                     </button>
+                    <!-- List of hints-->
+                    <ul class="list-group pt-2" id="hintsList">
+                    </ul>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </body>
 
