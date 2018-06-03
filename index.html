@@ -16,7 +16,7 @@
         <div class="mt-5 ml-5 mr-5 mb-2">
             <div class="row ">
                 <!--Game Screen-->
-                <div class="col-9">
+                <div class="col-md-9 col-sm-12">
                     <div class="jumbotron pt-5 pb-5 mb-2">
                         <!--Name to be guessed-->
                         <div class="row">
@@ -34,8 +34,8 @@
                         <hr class="my-3">
                         <!--Alphabet-->
                         <div class="row">
-                            <div class="btn-toolbar pt-3 mx-auto">
-                                <div class="btn-group btn-group-sm" id="alphabet">
+                            <div class="btn-toolbar">
+                                <div class="btn-group btn-group-sm d-block" id="alphabet">
                                     <button class="btn btn-primary m-1" value="a" disabled>A</button>
                                     <button class="btn btn-primary m-1" value="b" disabled>B</button>
                                     <button class="btn btn-primary m-1" value="c" disabled>C</button>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <!--Game Statistics-->
-                <div class="col-3">
+                <div class="col-md-3 col-sm-12">
                     <!--Current Game Statistics-->
                     <div class="row">
                         <div class="card col-12 p-0 mb-3">
@@ -101,20 +101,20 @@
             <!--Game Hints-->
             <hr class="my-3">
             <div class="row pt-3">
+                 <!--Hints-->
+                 <div class="col-md-9 col-sm-12 pl-4">
+                        <button type="button" class="btn btn-primary" onclick="giveHint()" id="hintsButton" disabled>
+                            Hints
+                            <span class="badge badge-light" id="badgeCount">2</span>
+                        </button>
+                        <!-- List of hints-->
+                        <ul class="list-group pt-2" id="hintsList">
+                        </ul>
+                    </div>
                 <!--Picture of the person-->
-                <div class="col-2">
+                <div class="col-md-3 col-sm-12">
                     <img src="http://via.placeholder.com/250x250" class="img-fluid" alt="Computer Scientists" id="picture">
-                </div>
-                <!--Hints-->
-                <div class="col-7 pl-4">
-                    <button type="button" class="btn btn-primary" onclick="giveHint()" id="hintsButton" disabled>
-                        Hints
-                        <span class="badge badge-light" id="badgeCount">2</span>
-                    </button>
-                    <!-- List of hints-->
-                    <ul class="list-group pt-2" id="hintsList">
-                    </ul>
-                </div>
+                </div>               
             </div>
         </div> 
     </div>
